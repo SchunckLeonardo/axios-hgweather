@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nomeTexto {
+    margin-bottom: 25px;
+    font-size: 50px;
+}
+
+.caixa-form {
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 50px;
+}
+
+.caixa-form form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.caixa-form label, .resultado h1 {
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+}
+
+.caixa-form input {
+    width: 50%;
+    padding: 15px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    outline: none;
+}
+
+.caixa-form .submit {
+    width: 35%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.caixa-form .submit:hover {
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #fff;
+}
+
+.resultado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 50px;
+    width: 50%;
+}
