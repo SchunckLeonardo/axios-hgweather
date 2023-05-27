@@ -1,4 +1,4 @@
-const url = "https://api.hgbrasil.com/weather"
+const url = "https://api.hgbrasil.com/weather?format=json-cors&key=732957ac"
 const formulario = document.querySelector('#formulario')
 const divResultado = document.querySelector('.resultado')
 
@@ -8,6 +8,5 @@ formulario.addEventListener("submit", e => {
     const nomeCidade = e.target.nomeCidade.value
     
     axios.get(url)
-        .then(res => res.data)
-        .then(console.log)
+        .then(res => console.log(res))
 })
