@@ -10,6 +10,10 @@ formulario.addEventListener("submit", e => {
 
     axios.get(`${url}&city_name=${nomeCidade}, ${estadoCidade}`)
         .then(res => criarCard(res))
+        .catch(e => tratarErro(e))
+
+    nomeCidade.value = ""
+    estadoCidade.value = ""
 })
 
 function criarCard(response) {
@@ -44,4 +48,11 @@ function criarCard(response) {
 
     divResultado.appendChild(h2);
     divResultado.appendChild(divData);
+}
+
+function tratarErro(erro) {
+    let h3 = document.createElement('h3')
+    h3.innerText = erro
+
+    divResultado.appendChild(h3)
 }

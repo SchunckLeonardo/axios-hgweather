@@ -85,3 +85,7 @@ body {
     gap: 25px;
     margin-top: 25px;
 }
+
+.resultado .titulos {
+    margin-top: 15px;
+}
