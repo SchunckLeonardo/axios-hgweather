@@ -8,12 +8,14 @@ formulario.addEventListener("submit", e => {
     const nomeCidade = e.target.nomeCidade.value
     const estadoCidade = e.target.estadoCidade.value
 
+    divResultado.innerHTML = "";
+
     axios.get(`${url}&city_name=${nomeCidade}, ${estadoCidade}`)
         .then(res => criarCard(res))
         .catch(e => tratarErro(e))
 
-    nomeCidade.value = ""
-    estadoCidade.value = ""
+    e.target.nomeCidade.value = ""
+    e.target.estadoCidade.value = ""
 })
 
 function criarCard(response) {
