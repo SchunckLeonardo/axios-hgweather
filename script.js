@@ -15,10 +15,14 @@ formulario.addEventListener("submit", e => {
 function criarCard(response) {
     let h2 = document.createElement('h2')
     let divData = document.createElement('div')
-    let temperatura = response.data.results.temp
-    let tempo = response.data.results.time
-    let humidity = response.data.results.humidity
-    let cidadeEstado = response.data.results.city
+
+    let resultados = response.data.results
+    console.log(resultados)
+
+    let temperatura = resultados.temp
+    let tempo = resultados.time
+    let humidity = resultados.humidity
+    let cidadeEstado = resultados.city
 
     h2.classList.add('titulos')
     divData.classList.add('infos')
