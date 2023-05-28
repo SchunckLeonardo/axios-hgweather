@@ -7,31 +7,41 @@ formulario.addEventListener("submit", e => {
 
     const nomeCidade = e.target.nomeCidade.value
     const estadoCidade = e.target.estadoCidade.value
-    
+
     axios.get(`${url}&city_name=${nomeCidade}, ${estadoCidade}`)
         .then(res => criarCard(res))
 })
 
 function criarCard(response) {
-    let h2 = document.createElement('h2')
-    let divData = document.createElement('div')
+    let h2 = document.createElement('h2');
+    let divData = document.createElement('div');
 
-    let resultados = response.data.results
-    console.log(resultados)
+    let resultados = response.data.results;
+    console.log(resultados);
 
-    let temperatura = resultados.temp
-    let tempo = resultados.time
-    let humidity = resultados.humidity
-    let cidadeEstado = resultados.city
+    let temperatura = resultados.temp;
+    let tempo = resultados.time;
+    let humidity = resultados.humidity;
+    let cidadeEstado = resultados.city;
 
-    h2.classList.add('titulos')
-    divData.classList.add('infos')
+    h2.classList.add('titulos');
+    divData.classList.add('infos');
 
-    h2.innerText = cidadeEstado
-    divData.appendChild(temperatura)
-    divData.appendChild(tempo)
-    divData.appendChild(humidity)
+    h2.innerText = cidadeEstado;
 
-    divResultado.appendChild(h2)
-    divResultado.appendChild(divData)
+    let pTemperatura = document.createElement('p');
+    pTemperatura.innerText = `Temperatura: ${temperatura}°C`;
+
+    let pTempo = document.createElement('p');
+    pTempo.innerText = `Tempo: ${tempo}`;
+
+    let pHumidity = document.createElement('p');
+    pHumidity.innerText = `Umidade: ${humidity}%`;
+
+    divData.appendChild(pTemperatura);
+    divData.appendChild(pTempo);
+    divData.appendChild(pHumidity);
+
+    divResultado.appendChild(h2);
+    divResultado.appendChild(divData);
 }
